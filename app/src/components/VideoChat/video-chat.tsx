@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import io, { Socket } from "socket.io-client";
 import Peer, { SignalData } from "simple-peer";
-// import { StyledVideoContainer, StyledVideo } from "./video-chat.styles";
-import { VideoContainer, CallAlert } from "../index";
+import { StyledContainer } from "./video-chat.styles";
+import { VideoContainer, CallAlert, CallerList } from "../index";
 
 type TSocket = typeof Socket;
 
@@ -97,25 +97,15 @@ export function VideoChat() {
   }
 
   return (
-    <div>
+    <StyledContainer>
+      <CallerList users={users} callPeer={callPeer} yourID={yourID} />
       <VideoContainer
         stream={stream}
         callAccepted={callAccepted}
         userVideo={userVideo}
         partnerVideo={partnerVideo}
       />
-      {Object.keys(users).map((key) => {
-        if (key === yourID) {
-          return null;
-        }
-        return (
-          <button key={key} onClick={() => callPeer(key)}>
-            Call {key}
-          </button>
-        );
-      })}
       {receivingCall && <CallAlert caller={caller} acceptCall={acceptCall} />}
-      <CallAlert caller={caller} acceptCall={acceptCall} />
-    </div>
+    </StyledContainer>
   );
 }

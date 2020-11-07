@@ -5,5 +5,6 @@ export const StyledVideoContainer = styled.div`
 `;
 
 export const StyledVideo = styled.video`
-  border: 1px solid blue;
+  border-radius: 5px;
+  margin-right: 2rem;
 `;
