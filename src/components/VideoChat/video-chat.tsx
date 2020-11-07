@@ -3,6 +3,7 @@ import io, { Socket } from "socket.io-client";
 import Peer, { SignalData } from "simple-peer";
 import { StyledContainer } from "./video-chat.styles";
 import { VideoContainer, CallAlert, CallerList } from "../index";
+import { config } from "./../../config";
 
 type TSocket = typeof Socket;
 
@@ -20,7 +21,7 @@ export function VideoChat() {
   const socket = useRef<TSocket>();
 
   useEffect(() => {
-    socket.current = io("http://192.168.1.70:1234", {
+    socket.current = io(config.SOCKET_URL, {
       transports: ["websocket"],
     });
     if (!navigator) return;
