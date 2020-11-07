@@ -4,7 +4,8 @@ export const StyledContainer = styled.div`
   position: absolute;
   top: 10%;
   left: 50%;
-  width: 38rem;
+  transform: translateX(-50%);
+  width: 32rem;
   background: ${({ theme }) => theme.colors.light};
   border-radius: 0.6rem;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);

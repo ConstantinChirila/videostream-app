@@ -19,7 +19,7 @@ export function VideoContainer({
     <StyledVideoContainer>
       {stream && <StyledVideo muted playsInline ref={userVideo} autoPlay />}
       {callAccepted && (
-        <StyledVideo playsInline ref={partnerVideo} autoPlay muted />
+        <StyledVideo playsInline ref={partnerVideo} autoPlay muted /> //remove the muted attribute to enable voice chat as well
       )}
     </StyledVideoContainer>
   );
