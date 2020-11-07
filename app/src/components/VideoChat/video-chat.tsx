@@ -37,7 +37,7 @@ export function VideoChat() {
       setYourID(id);
     });
 
-    socket.current.on("allUsers", (users: any) => {
+    socket.current.on("allUsers", (users: {}) => {
       setUsers(users);
     });
 
