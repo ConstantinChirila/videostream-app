@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { StyledContainer, StyledHeading, StyledButton } from "./";
 
 type TProps = {
   caller: string;
@@ -7,9 +8,11 @@ type TProps = {
 
 export function CallAlert({ caller, acceptCall }: TProps): ReactElement {
   return (
-    <div>
-      <h1>{caller} is calling you</h1>
-      <button onClick={acceptCall}>Accept</button>
-    </div>
+    <StyledContainer>
+      <StyledHeading>{caller} is calling you</StyledHeading>
+      <StyledButton type="button" onClick={acceptCall}>
+        Accept
+      </StyledButton>
+    </StyledContainer>
   );
 }
