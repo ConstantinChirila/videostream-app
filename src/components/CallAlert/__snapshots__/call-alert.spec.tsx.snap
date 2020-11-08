@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CallAlert should render the component 1`] = `
+<div
+  class="sc-bdfBwQ kGxswN"
+>
+  <h1
+    class="sc-gsTCUz eqiecY"
+  >
+    test
+     is calling you
+  </h1>
+  <button
+    class="sc-hKgILt eUJoKM"
+    type="button"
+  >
+    Accept
+  </button>
+</div>
+`;
