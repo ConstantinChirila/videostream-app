@@ -9,7 +9,7 @@ type TProps = {
 
 export function CallerList({ users, yourID, callPeer }: TProps): ReactElement {
   const userList = Object.keys(users).map((key) => {
-    if (key === yourID) {
+    if (key.toString() === yourID.toString()) {
       return null;
     }
 
@@ -19,10 +19,11 @@ export function CallerList({ users, yourID, callPeer }: TProps): ReactElement {
       </StyledButton>
     );
   });
+
   return (
     <StyledContainer>
       <h3>Active Users</h3>
-      {userList.length > 1 ? userList : "No active users."}
+      {userList.length > 0 ? userList : "No active users."}
     </StyledContainer>
   );
 }
