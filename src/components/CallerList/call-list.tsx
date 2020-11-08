@@ -8,18 +8,19 @@ type TProps = {
 };
 
 export function CallerList({ users, yourID, callPeer }: TProps): ReactElement {
-  const userList = Object.keys(users).map((key) => {
-    if (key.toString() === yourID.toString()) {
-      return null;
-    }
+  const userList = Object.keys(users)
+    .map((key) => {
+      if (key === yourID) {
+        return null;
+      }
 
-    return (
-      <StyledButton key={key} onClick={() => callPeer(key)}>
-        <CallIcon /> {key}
-      </StyledButton>
-    );
-  });
-
+      return (
+        <StyledButton key={key} onClick={() => callPeer(key)}>
+          <CallIcon /> {key}
+        </StyledButton>
+      );
+    })
+    .filter(Boolean);
   return (
     <StyledContainer>
       <h3>Active Users</h3>
